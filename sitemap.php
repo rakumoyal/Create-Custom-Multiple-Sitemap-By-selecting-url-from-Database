@@ -13,10 +13,10 @@ if ($conn->connect_error) {
 } 
 
 /* Wordpress Query for wp_posts tables link*/
-$sql = "SELECT CONCAT('http://localhost/zsolt/',(SELECT wp_terms.slug FROM `wp_term_relationships`,wp_terms where wp_term_relationships.object_id = wp_posts.ID and wp_terms.term_id=wp_term_relationships.term_taxonomy_id limit 1),'/',post_name) as guiddetail FROM `wp_posts` group by guiddetail ORDER BY `wp_posts`.`ID` DESC";
+//$sql = "SELECT CONCAT('http://localhost/zsolt/',(SELECT wp_terms.slug FROM `wp_term_relationships`,wp_terms where wp_term_relationships.object_id = wp_posts.ID and wp_terms.term_id=wp_term_relationships.term_taxonomy_id limit 1),'/',post_name) as guiddetail FROM `wp_posts` group by guiddetail ORDER BY `wp_posts`.`ID` DESC";
 
-/* Any table work as your widh*/
-// $sql = "SELECT CONCAT('http://localhost/project_name/',post_name) as guiddetail FROM `posts` group by guiddetail ORDER BY `posts`.`ID` DESC";
+/* Any table work as your wish*/
+ $sql = "SELECT CONCAT('http://localhost/project_name/',post_name) as guiddetail FROM `posts` group by guiddetail ORDER BY `posts`.`ID` DESC";
 
 $result = $conn->query($sql);
 
